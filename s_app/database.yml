@@ -1,0 +1,22 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: root
+  database: sinatra_app_dev
+  socket: /var/run/mysqld/mysqld.sock
+  pool: 5
+  charset: 'utf8'
+  collation: 'utf8_unicode_ci'
+
+
+# The production emv is not needed if deploying on heroku
+#production:
+#  adaptor: mysql2
+#  encoding: utf8
+#  username: root
+#  password: root
+#  database: sinatra_app_production
+#  socket: /var/run/mysqld/mysqld.sock
+#  pool: 5
+#  charset: 'utf8'

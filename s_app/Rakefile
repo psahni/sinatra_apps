@@ -1,0 +1,16 @@
+# require your app file first
+require './app'
+require 'sinatra/activerecord/rake'
+require 'active_record'
+require 'yaml'
+
+
+namespace :db do
+
+  desc "Create Database"
+  task :create do
+    DBconfig = YAML::load( File.open('database.yml') )['development']
+    DatabaseTasks.new(DBconfig).establish_db_connection
+  end
+
+end
