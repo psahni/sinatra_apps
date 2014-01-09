@@ -5,12 +5,26 @@ require 'active_record'
 require 'yaml'
 
 
-namespace :db do
+namespace :db  do
+
 
   desc "Create Database"
+
   task :create do
-    DBconfig = YAML::load( File.open('database.yml') )['development']
-    DatabaseTasks.new(DBconfig).establish_db_connection
+    config = DatabaseTasks.settings
+    DatabaseTasks.new(config).create_database
+  end
+
+
+
+  task :migrate do
+    config = DatabaseTasks.settings
+    DatabaseTasks.new(config).migrate
+  end
+
+  task :drop do
+    config = DatabaseTasks.settings
+    DatabaseTasks.new(config).drop_database
   end
 
 end
