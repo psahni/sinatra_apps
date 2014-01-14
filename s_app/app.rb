@@ -17,13 +17,15 @@ configure do
 end
 
 
-class Post < ActiveRecord::Base
+# After creating the database and defining the migrations
 
+class Post < ActiveRecord::Base
 end
 
 class MyApp < Sinatra::Base
 
  get '/' do
+    @posts = Post.order('created_at DESC')
     haml :index
  end
 

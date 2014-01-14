@@ -26,5 +26,15 @@ namespace :db  do
     config = DatabaseTasks.settings
     DatabaseTasks.new(config).drop_database
   end
+  
+  task :dummy_posts do
+	  require 'logger'
+	  ActiveRecord::Base.logger = Logger.new(STDOUT)
+    Post.delete_all
+  	Post.create(:title => 'Ruby on Rails Framework', :body => "This is all about convention over configuration")
+  	Post.create(:title => 'HTML5', :body => 'jQuery, jQuery Mobile, CSS3, Angular JS, Backbone.js')
+  	Post.create(:title => 'PHP Skills', :body => 'Lamp Stack')
+  	Post.create(:title => 'Database Sql', :body => 'Mysql Skills')
+  end
 
 end
