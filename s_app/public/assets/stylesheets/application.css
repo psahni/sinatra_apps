@@ -80,3 +80,14 @@ li .author {
 .highlight {
     color: #DDFFFF;
 }
+
+.text{
+    font-size: 15px;
+}
+.text a{
+    text-decoration: underline;
+}
+
+.post_body{
+  font-style: 'Lucida Sans';
+}

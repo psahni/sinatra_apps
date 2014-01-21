@@ -1,0 +1,6 @@
+%h1
+  Displaying Posts
+%ul.status
+  - @posts.each_with_index do |post, index|
+    %li{:style => "display: #{ index == 0 ? 'block' : 'none' }"}
+      .text= "#{post_link(post, post.title)}"
