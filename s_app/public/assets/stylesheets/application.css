@@ -7,8 +7,9 @@ html, body {
 body {
     background: #222;
     color: #FFF;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Tahoma, 'sans-serif';
     font-size: 18px;
+    font: 400 16px/1.5em Oswald, 'Open Sans', verdana, sans-serif;
 }
 #container {
     margin: 0 auto -2em;
@@ -90,4 +91,50 @@ li .author {
 
 .post_body{
   font-style: 'Lucida Sans';
+}
+
+.form_area{
+    border: 5px solid #E0E0E0;
+    background: #EFEFEF;
+    padding: 20px 10px;
+    color: black;
+    width: 400px;
+}
+.form_area input[type=text], textarea{
+    width: 85%;
+    max-width: 200px;
+    padding: 7px;
+
+}
+
+input:focus{
+    border: 1px solid #449EE2;
+    color: black;
+    box-shadow: inset 1px 1px 3px #888, 0px 0px 10px #3096E5;
+}
+
+.form_heading{
+    padding: 5px 0px;
+}
+.fields{
+  width: 400px;
+  margin: 15px 0px;
+}
+
+.fields label{
+    width: 30%;
+    float: left;
+}
+.fields input{
+    width: 70%;
+}
+
+ul.error_block{
+ border: 2px solid black;
+ width: 200px;
+}
+ul.error_block li{
+    color:firebrick;
+    font-size: 14px;
+    list-style:disc;
 }

@@ -23,9 +23,18 @@ end
 # After creating the database and defining the migrations
 
 class Post < ActiveRecord::Base
+  validates :title, :body, :presence => true
 end
 
 class MyApp < Sinatra::Base
+
+  configure do
+    # Logging
+    enable :logging
+    file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
+    file.sync = true
+    use Rack::CommonLogger, file
+  end
 
   helpers do
 
@@ -36,7 +45,7 @@ class MyApp < Sinatra::Base
   end
 
  get '/' do
-    @posts = Post.order('created_at DESC')
+    @posts = Post.all
     haml :index
  end
 
@@ -45,5 +54,25 @@ class MyApp < Sinatra::Base
     @post = Post.find(params[:id])
     haml :show
   end
+
+  post '/posts' do
+    @post = Post.create(params[:post])
+    if @post.save
+      redirect to('/'), 303
+    else
+      @posts = Post.order('created_at DESC')
+      haml :index
+    end
+  end
+
+
+  delete '/posts/:id' do
+
+  end
+
+  put '/posts/:id' do
+
+  end
+
 end
 

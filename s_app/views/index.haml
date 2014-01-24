@@ -2,5 +2,21 @@
   Displaying Posts
 %ul.status
   - @posts.each_with_index do |post, index|
-    %li{:style => "display: #{ index == 0 ? 'block' : 'none' }"}
+    %li{:style => "display:block"}
       .text= "#{post_link(post, post.title)}"
+
+%h3.form_heading Create Post
+
+%div.form_area
+  %ul.error_block
+    %li.error
+      This can not be blank
+  %form{:action => '/posts',       :method => 'post'}
+    %div.fields
+      %label{:for => 'post_title',   :value => 'Title'}='Title'
+      %input{:name => 'post[title]', :type => 'text'}
+    %div.fields
+      %label{:for => 'post_body',    :value => 'Body'}='Body'
+      %textarea{:cols => '20', :rows => 10}
+    %div.button
+      %input{:type => 'submit', :value => 'Create'}
