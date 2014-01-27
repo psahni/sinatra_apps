@@ -129,11 +129,12 @@ input:focus{
     width: 70%;
 }
 
-ul.error_block{
- border: 2px solid black;
- width: 200px;
+.error_block{
+ border: 3px solid black;
+ width: 300px;
+ padding: 5px 15px;
 }
-ul.error_block li{
+.error_block ul li{
     color:firebrick;
     font-size: 14px;
     list-style:disc;

@@ -3,7 +3,6 @@ require 'sinatra/base'
 
 require 'sinatra/activerecord/rake'
 require 'active_record'
-
 require 'haml'
 require 'erb'
 
@@ -19,7 +18,6 @@ end
 
 
 
-
 # After creating the database and defining the migrations
 
 class Post < ActiveRecord::Base
@@ -27,7 +25,8 @@ class Post < ActiveRecord::Base
 end
 
 class MyApp < Sinatra::Base
-
+  
+  
   configure do
     # Logging
     enable :logging
@@ -36,16 +35,16 @@ class MyApp < Sinatra::Base
     use Rack::CommonLogger, file
   end
 
-  helpers do
 
+  helpers do
     def post_link(post, title)
       "<a href='/posts/#{ post.id }'>#{ title }</a>"
     end
-
   end
-
+ 		
  get '/' do
     @posts = Post.all
+    @post = Post.new
     haml :index
  end
 

@@ -4,6 +4,7 @@ gem 'shotgun'
 gem "activerecord"
 gem "sinatra-activerecord"
 gem 'mysql2'
+gem 'sinatra_more', :git => 'https://github.com/nesquena/sinatra_more.git'
 
 
 

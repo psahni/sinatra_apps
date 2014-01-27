@@ -8,9 +8,12 @@
 %h3.form_heading Create Post
 
 %div.form_area
-  %ul.error_block
-    %li.error
-      This can not be blank
+  -if !@post.errors.empty?
+    %div.error_block
+      %h4 Please fix these errors
+      %ul
+        -@post.errors.each do |field, message|
+          %li.error="#{ field } #{ message }"
   %form{:action => '/posts',       :method => 'post'}
     %div.fields
       %label{:for => 'post_title',   :value => 'Title'}='Title'
