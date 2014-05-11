@@ -1,0 +1,47 @@
+body {  }
+
+article#references nav ul li{ height:180px; }
+article#references nav ul li div{ height:180px; }
+article#references nav ul li p.client-title{ margin-top:57px; }
+
+.subpage article#ourclients{
+	/*padding:120px 0px 0px 0px;	*/
+}	
+	.subpage article#ourclients nav#ourclientsslider-container{
+		height:10000px;	
+		width:100%;
+		background-color:#FFFFFF;
+	}
+	.subpage article#ourclients nav ul#ourclientsslider{
+		width:100%;
+	}
+		.subpage article#ourclients nav ul#ourclientsslider li{
+			width:33.160%;	
+		}
+		.subpage article#ourclients nav ul li ul li{ width:auto !important; }
+		.subpage a.btn.slider.clientslider{ display:none; }
+
+	article#ourclients nav ul li{
+		position:relative;	
+		display:table-cell;
+		line-height:266px;
+		text-align:center;
+	}
+		article#ourclients nav ul li img{
+			position:relative;
+			margin:0px auto;
+			line-height:normal;
+			vertical-align:middle;	
+		}
+		article#ourclients nav ul li div{
+			position:absolute;
+			top:0px;
+			left:0px;	
+		}
+	
+    a.btn.slider:hover{
+        border:none;
+        background:none !important;	
+    }
+    a.btn.slider.left:hover span{ background-position: -32px center; }
+    a.btn.slider.right:hover span{ background-position: 32px center; }
